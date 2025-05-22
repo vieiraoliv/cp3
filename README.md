@@ -1,3 +1,5 @@
+Henrique Vieira de Oliveira - rm558777
+
 # 🛒 Lista de Compras - Android com Kotlin
 
 Este é um aplicativo de lista de compras desenvolvido em Kotlin para Android, utilizando arquitetura MVVM e banco de dados local com Room. O app permite adicionar, visualizar e excluir itens de uma lista de compras.
