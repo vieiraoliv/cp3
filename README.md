@@ -106,7 +106,6 @@ bash
 Copiar
 Editar
 
-
 git clone https://github.com/seuusuario/android-lista-de-compras.git
 
 Abra no Android Studio.
