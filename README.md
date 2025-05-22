@@ -28,7 +28,8 @@ data class ItemModel(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     val nome: String,
     val quantidade: Int
-)```
+)
+```
 🗃️ ItemDao.kt
 Interface que define operações no banco de dados:
 
@@ -42,7 +43,8 @@ interface ItemDao {
 
     @Query("SELECT * FROM item_table")
     fun getAll(): LiveData<List<ItemModel>>
-}```
+}
+```
 
 🧠 ItemsViewModel.kt
 Controla o fluxo de dados entre a UI e o banco:
@@ -62,7 +64,8 @@ Controla o fluxo de dados entre a UI e o banco:
             dao.delete(item)
         }
     }
-}```
+}
+```
 
 🎛️ MainActivity.kt
 Tela principal com lógica de exibição e ações:
@@ -78,7 +81,8 @@ binding.btnAdicionar.setOnClickListener {
     val quantidade = binding.editQuantidade.text.toString().toIntOrNull() ?: 1
     val item = ItemModel(nome = nome, quantidade = quantidade)
     viewModel.insert(item)
-}```
+}
+```
 
 
 
@@ -98,7 +102,8 @@ Clone o repositório:
 bash
 Copiar
 Editar
-```git clone https://github.com/seuusuario/android-lista-de-compras.git```
+```git clone https://github.com/seuusuario/android-lista-de-compras.git
+```
 Abra no Android Studio.
 
 Execute em um emulador ou dispositivo Android.
