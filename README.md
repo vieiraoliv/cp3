@@ -22,7 +22,7 @@ O app segue o padrão **MVVM (Model - View - ViewModel)**, promovendo uma separa
 
 Define a estrutura de um item da lista:
 
-```kotlin
+```
 @Entity(tableName = "item_table")
 data class ItemModel(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
@@ -33,7 +33,8 @@ data class ItemModel(
 🗃️ ItemDao.kt
 Interface que define operações no banco de dados:
 
-```@Dao
+```
+@Dao
 interface ItemDao {
     @Insert
     fun insert(item: ItemModel)
@@ -49,7 +50,8 @@ interface ItemDao {
 🧠 ItemsViewModel.kt
 Controla o fluxo de dados entre a UI e o banco:
 
-```class ItemsViewModel(application: Application): AndroidViewModel(application) {
+```
+class ItemsViewModel(application: Application): AndroidViewModel(application) {
     private val dao = ItemDatabase.getDatabase(application).itemDao()
     val items: LiveData<List<ItemModel>> = dao.getAll()
 
@@ -70,7 +72,8 @@ Controla o fluxo de dados entre a UI e o banco:
 🎛️ MainActivity.kt
 Tela principal com lógica de exibição e ações:
 
-```val viewModel = ViewModelProvider(this).get(ItemsViewModel::class.java)
+```
+val viewModel = ViewModelProvider(this).get(ItemsViewModel::class.java)
 
 viewModel.items.observe(this) { lista ->
     adapter.submitList(lista)
@@ -102,7 +105,8 @@ Clone o repositório:
 bash
 Copiar
 Editar
-```git clone https://github.com/seuusuario/android-lista-de-compras.git
+```
+git clone https://github.com/seuusuario/android-lista-de-compras.git
 ```
 Abra no Android Studio.
 
